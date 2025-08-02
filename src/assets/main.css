@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+@import 'flowbite';
+/* @import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.blue {
+  text-decoration: none;
+  color: hsla(229, 100%, 59%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    /* place-items: center; 
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.currency-ticker {
+  font-size: 15px;
+  padding-block: 8px;
+  border-block: 1px solid;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.currency-ticker ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  animation: scroll 60s linear infinite;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.currency-ticker li {
+  display: inline-block;
+  min-width: 180px;
+  text-align: center;
+  white-space: nowrap;
+}
