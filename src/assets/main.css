@@ -42,6 +42,24 @@ body {
   padding: 0;
 }
 
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* @keyframes scroll-reverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+} */
+
 .currency-ticker {
   font-size: 15px;
   padding-block: 8px;
@@ -49,7 +67,6 @@ body {
   overflow: hidden;
   user-select: none;
   display: flex;
-  gap: 20px;
   width: 100%;
   white-space: nowrap;
 }
@@ -59,16 +76,22 @@ body {
   flex-shrink: 0;
   min-width: 100%;
   display: flex;
-  animation: scroll 60s linear infinite;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
+  animation: scroll 200s linear infinite;
 }
 
-@keyframes scroll {
-  to {
-    transform: translateX(-100%);
-  }
+.currency-ticker.reverse ul {
+  animation: scroll 200s linear infinite reverse;
+}
+
+.currency-ticker ul:nth-child(2) {
+  transform: translateX(100%);
+}
+
+.currency-ticker.reverse ul:nth-child(2) {
+  transform: translateX(-100%);
 }
 
 .currency-ticker li {
@@ -76,4 +99,14 @@ body {
   min-width: 180px;
   text-align: center;
   white-space: nowrap;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
 }

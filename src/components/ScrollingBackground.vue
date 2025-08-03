@@ -19,7 +19,6 @@ onMounted(async () => {
   loading.value = false
 })
 
-// 👇 group by base_currency
 const groupedCurrencies = computed(() => {
   const groups: Record<string, Currency[]> = {}
   for (const c of currencies.value) {
@@ -34,17 +33,50 @@ const groupedCurrencies = computed(() => {
 
 <template>
   <div
-    class="absolute bg-black text-amber-50 w-full h-full flex flex-col items-center justify-center"
+    class="absolute bg-yellow-100 text-black w-full h-full flex flex-col items-center justify-center"
   >
     <div v-if="loading"></div>
 
-    <div v-else class="flex flex-col gap-10">
-      <div v-for="(list, base) in groupedCurrencies" :key="base" class="currency-ticker">
+    <div v-else class="flex flex-col gap-150">
+      <div class="currency-ticker">
         <ul>
-          <li v-for="c in list" :key="c.id">{{ c.base_currency }} → {{ c.code }} : {{ c.rate }}</li>
+          <li v-for="c in currencies" :key="c.id">
+            <div v-if="c.base_currency !== c.code">
+              <a class="text-green-600">{{ c.base_currency }}</a>
+              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+            </div>
+            <div v-else>||</div>
+          </li>
         </ul>
         <ul aria-hidden="true">
-          <li v-for="c in list" :key="c.id">{{ c.base_currency }} → {{ c.code }} : {{ c.rate }}</li>
+          <li v-for="c in currencies" :key="c.id">
+            <div v-if="c.base_currency !== c.code">
+              <a class="text-green-600">{{ c.base_currency }}</a>
+              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+            </div>
+            <div v-else>||</div>
+          </li>
+        </ul>
+      </div>
+      <div class="currency-ticker reverse">
+        <ul>
+          <li v-for="c in currencies" :key="c.id">
+            <div v-if="c.base_currency !== c.code">
+              <a class="text-green-600">{{ c.base_currency }}</a>
+              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+            </div>
+            <div v-else>||</div>
+          </li>
+        </ul>
+        <ul aria-hidden="true">
+          <li v-for="c in currencies" :key="c.id">
+            <div v-if="c.base_currency !== c.code">
+              <a class="text-green-600">{{ c.base_currency }}</a>
+              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+            </div>
+            <div v-else>||</div>
+          </li>
+          +
         </ul>
       </div>
     </div>
