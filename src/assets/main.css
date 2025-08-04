@@ -110,3 +110,34 @@ input[type='number']::-webkit-outer-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+
+input {
+  border: none;
+  background: transparent;
+}
+
+select {
+  border: none;
+  background: transparent;
+}
+
+.shadow-dance-text {
+  text-shadow:
+    0px 2px 0 gray,
+    0px 4px 0 #808080;
+  animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+  0%,
+  100% {
+    text-shadow:
+      0px 2px 0 gray,
+      0px 4px 0 #d3d3d3;
+  }
+  50% {
+    text-shadow:
+      -0px -2px 0 gray,
+      -0px -4px 0 #d3d3d3;
+  }
+}

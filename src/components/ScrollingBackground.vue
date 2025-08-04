@@ -33,7 +33,7 @@ const groupedCurrencies = computed(() => {
 
 <template>
   <div
-    class="absolute bg-yellow-100 text-black w-full h-full flex flex-col items-center justify-center"
+    class="absolute bg-yellow-100 text-black w-full h-full flex flex-col items-center justify-center font-mono"
   >
     <div v-if="loading"></div>
 
@@ -42,8 +42,9 @@ const groupedCurrencies = computed(() => {
         <ul>
           <li v-for="c in currencies" :key="c.id">
             <div v-if="c.base_currency !== c.code">
-              <a class="text-green-600">{{ c.base_currency }}</a>
-              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+              {{ c.base_currency }}
+              <a class="text-green-600"> 1</a> → {{ c.code }}
+              <a class="text-green-300">{{ c.rate }}</a>
             </div>
             <div v-else>||</div>
           </li>
@@ -51,8 +52,9 @@ const groupedCurrencies = computed(() => {
         <ul aria-hidden="true">
           <li v-for="c in currencies" :key="c.id">
             <div v-if="c.base_currency !== c.code">
-              <a class="text-green-600">{{ c.base_currency }}</a>
-              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+              {{ c.base_currency }}
+              <a class="text-green-600"> 1</a> → {{ c.code }}
+              <a class="text-green-300">{{ c.rate }}</a>
             </div>
             <div v-else>||</div>
           </li>
@@ -62,8 +64,9 @@ const groupedCurrencies = computed(() => {
         <ul>
           <li v-for="c in currencies" :key="c.id">
             <div v-if="c.base_currency !== c.code">
-              <a class="text-green-600">{{ c.base_currency }}</a>
-              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+              {{ c.base_currency }}
+              <a class="text-green-600"> 1</a> → {{ c.code }}
+              <a class="text-green-300">{{ c.rate }}</a>
             </div>
             <div v-else>||</div>
           </li>
@@ -71,8 +74,9 @@ const groupedCurrencies = computed(() => {
         <ul aria-hidden="true">
           <li v-for="c in currencies" :key="c.id">
             <div v-if="c.base_currency !== c.code">
-              <a class="text-green-600">{{ c.base_currency }}</a>
-              1 → <a class="text-green-300">{{ c.code }}</a> {{ c.rate }}
+              {{ c.base_currency }}
+              <a class="text-green-600"> 1</a> → {{ c.code }}
+              <a class="text-green-300">{{ c.rate }}</a>
             </div>
             <div v-else>||</div>
           </li>
