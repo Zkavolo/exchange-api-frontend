@@ -9,3 +9,15 @@ export const currencyInitials: Record<string, string> = {
   CNY: 'Chinese Yuan',
   CAD: 'Canadian Dollar',
 }
+
+export const currencyLogos: Record<string, string> = {
+  USD: '$',
+  AUD: '$',
+  IDR: 'Rp',
+  EUR: '€',
+  JPY: '¥',
+  CHF: 'CHF',
+  GBP: '£',
+  CNY: '¥',
+  CAD: '$',
+}

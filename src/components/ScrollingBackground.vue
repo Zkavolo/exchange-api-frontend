@@ -13,7 +13,6 @@ onMounted(async () => {
     console.error('Error fetching currencies:', error)
   } else if (data) {
     currencies.value = data as Currency[]
-    console.log('Fetched currencies:', currencies.value)
   }
 
   loading.value = false

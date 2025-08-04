@@ -112,13 +112,13 @@ input[type='number'] {
 }
 
 input {
-  border: none;
-  background: transparent;
+  /* border: none; */
+  /* background: transparent; */
 }
 
 select {
-  border: none;
-  background: transparent;
+  /* border: none; */
+  /* background: transparent; */
 }
 
 .shadow-dance-text {
